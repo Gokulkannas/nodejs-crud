@@ -1,4 +1,5 @@
 const Cast = require("../Model/Cast");
+const mongoose = require("mongoose")
 
 exports.getaddDetails = (req, res) => {
   return res.render("add-details");

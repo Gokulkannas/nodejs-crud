@@ -20,6 +20,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+  
 app.use("/", require("./Route/castRoutes"));
 
 const port = 1000;
