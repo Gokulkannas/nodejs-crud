@@ -12,7 +12,7 @@ app.set("view engine", "ejs");
 app.set("views", "./html");
 
 mongoose
-  .connect("mongodb://localhost:27017/Casting")
+  .connect("mongodb+srv://gokulkannas20msc:vscode1234@cluster0.z9hspc4.mongodb.net/casting")
   .then(() => {
     console.log("db is connected");
   })
