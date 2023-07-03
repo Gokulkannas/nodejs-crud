@@ -33,11 +33,11 @@ const castSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  experience: {
+  accountnumber: {
     type: Number,
     required: true,
   },
-  film: {
+  ifsc: {
     type: String,
     requied: true,
   },
@@ -51,35 +51,7 @@ const castSchema = new mongoose.Schema({
   },
 });
 
-const creditSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-  },
-  mobile: {
-    type: Number,
-    required: true,
-  },
-  experience: {
-    type: Number,
-    required: true,
-  },
-  film: {
-    type: String,
-    requiored: true,
-  },
-  date: {
-    type: Date,
-    default: Date.now(),
-  },
-});
-
 const Cast = mongoose.model("Cast", castSchema);
-const Credit = mongoose.model("Credit", creditSchema);
 
 const getaddDetails = (req, res) => {
   return res.render("add-details");
@@ -90,8 +62,8 @@ const postDetails = (req, res) => {
     name: req.body.name,
     email: req.body.email,
     mobile: req.body.mobile,
-    experience: req.body.experience,
-    film: req.body.film,
+    accountnumber: req.body.accountnumber,
+    IFSC: req.body.ifsc,
     credited: Boolean(req.body.credited),
   };
   Cast.create(data)
