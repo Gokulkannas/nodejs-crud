@@ -20,11 +20,11 @@
                     <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                          <div class="content">
                             <form method="post" action="/details"></form>
-                                <h4 class="title" name="name"><%= i.name %></h4>
-                                <p class="description" name="email">Email: <%= i.email %></p>
-                                <p class="description" name="mobile">Mobile Number: <%= i.mobile %></p>
-                                <p class="description" name="experience">Bank Number: <%= i.experience %></p>
-                                <p class="description" name="film">IFSC code: <%= i.film %></p>
+                                <h4 class="title"><%= i.name %></h4>
+                                <p class="description">Email: <%= i.email %></p>
+                                <p class="description">Mobile Number: <%= i.mobile %></p>
+                                <p class="description">Bank Number: <%= i.accountnumber %></p>
+                                <p class="description">IFSC code: <%= i.IFSC %></p>
                                 <a  class="btn btn-info" href="/credited/<%=i._id %>" type="submit">Credit</a>
                             </form>
                         </div>
