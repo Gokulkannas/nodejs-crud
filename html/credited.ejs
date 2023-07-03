@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <title>Credited page</title>
+</head>
+<body>
+    <br><br>
+    <%- include('./navbar') %>
+    <section class="intro">
+        <div class="bg-image h-100" style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/tables/img2.jpg');">
+          <div class="mask d-flex align-items-center h-100" style="background-color: rgba(228, 191, 191, 0.25);">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="card bg-dark shadow-2-strong">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-dark table-borderless mb-0">
+                          <thead>
+                            <tr>
+                              <th scope="col">NAME</th>
+                              <th scope="col">EMAIL ADDRESS</th>
+                              <th scope="col">MOBILE NUMBER</th>
+                              <th scope="col">CREDIT OR NOT</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% for (let i of data) { %>
+                              <% if(i.credited==true) { %>
+                                <tr>
+                                  <th scope="row"><%= i.name %></th>
+                                  <td><%= i.email %></td>
+                                  <td><%= i.mobile %></td>
+                                  <td>Credited</td>
+                                  <td></td>
+                                </tr>
+                              <% } %>
+                        <% } %>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <style>
+        html,
+        body,
+        .intro {
+        height: 100%;
+        }
+
+        table td,
+        table th {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        }
+
+        thead th,
+        tbody th {
+        color: #fff;
+        }
+
+        tbody td {
+        font-weight: 500;
+        color: rgba(255,255,255,.65);
+        }
+
+        .card {
+        border-radius: .5rem;
+        }
+      </style>
+</body>
+</html>
